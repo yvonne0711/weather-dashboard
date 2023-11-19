@@ -12,6 +12,10 @@ header {
     padding: 10px;
 }
 
+#grad {
+    background-image: linear-gradient(to right, blue, darkblue);
+}
+
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -26,6 +30,7 @@ header {
 #search-input {
     flex: 1;
     padding: 5px;
+    margin: 10px;
 }
 
 #search-button {
@@ -34,6 +39,7 @@ header {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    width: 100%;
 }
 
 #search-history {
