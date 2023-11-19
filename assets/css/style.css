@@ -18,25 +18,16 @@ header {
     background-image: linear-gradient(to right, blue, darkblue);
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-}
-
-#search-form {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
+/* search bar */
 #search-input {
     flex: 1;
     padding: 5px;
-    margin: 10px;
+    margin-bottom: 10px;
 }
 
+/* button */
 #search-button {
-    background-color: #4285f4;
+    background-color: blue;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -44,9 +35,6 @@ header {
     width: 100%;
 }
 
-#search-history {
-    margin-top: 20px;
-}
 
 #forecast {
     display: flex;
