@@ -1,10 +1,13 @@
 // current date
 var currentDate = dayjs().format("DD/MM/YYYY");
 
-// Get the search button element by its ID
+// the search button
 var searchButton = document.getElementById("search-button");
 
-// Add a click event listener to the search button
+// the current weather card
+var weatherCard = document.getElementById("today");
+
+// click event listener on the search button
 searchButton.addEventListener("click", function (event) {
   
   event.preventDefault();
@@ -35,6 +38,12 @@ searchButton.addEventListener("click", function (event) {
       // convert the temp to celsius
       var tempC = data.main.temp - 273.15;
       document.getElementById("temp").textContent = "Temperature: " + tempC.toFixed(2) + " °C";
+      
+      // current weather card appear only after a user clicks on the search button when the api data is fetched
+      weatherCard.style.display = "block";
+
+      // adds the city to the search history
+      addToSearchHistory(city);
     })
     .catch(function (error) {
       // display error with api request

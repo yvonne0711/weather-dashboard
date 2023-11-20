@@ -35,18 +35,20 @@ header {
     width: 100%;
 }
 
-
-#forecast {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.weather-card {
+/* current weather's card styling, displays nothing to begin with */
+#today{
+    display: none;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
-    width: 200px;
+    width: 100%;
+}
+
+
+#forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
