@@ -26,6 +26,8 @@ searchButton.addEventListener("click", function (event) {
       document.getElementById("wind").textContent = "Wind: " + data.wind.speed + " KPH";
       document.getElementById("humidity").textContent = "Humidity: " + data.main.humidity + "%";
 
+      // retrieves weather icon data
+      // stack overflow help  
       var iconcode = data.weather[0].icon;
       var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
       document.getElementById("wicon").src = iconurl;
