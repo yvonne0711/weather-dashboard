@@ -33,6 +33,7 @@
               <input class="form-input weather-search" type="text" id="search-input" placeholder=" e.g. London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
               <div class="input-group-append">
+                <!-- submit button -->
                 <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
                   Search
                 </button>
@@ -60,13 +61,13 @@
       </aside>
 
       <div class="col-lg-9 pb-3">
-
-        <section id="today" class="card mt-3 p-2" role="region" aria-live="polite">
-          <h2 class="card-title pb-3 city">London (19/11/2023)</h2>
-          <div class="weather-data-container weather-data-main">
-            <p class="card-text weather-data-item p-1 temp">Temp: 13.63°C</p>
-            <p class="card-text weather-data-item p-1 wind">Wind: 17 KPH</p>
-            <p class="card-text weather-data-item p-1 humidity"> Humidity: 84%</p>
+        <!-- current weather -->
+        <section id="today" class="mt-3" role="region" aria-live="polite">
+          <div class="card">
+          <h2 class="card-title pb-3" id="city"></h2>
+            <p class="card-text weather-data-item p-1" id="temp"></p>
+            <p class="card-text weather-data-item p-1" id="wind"></p>
+            <p class="card-text weather-data-item p-1" id="humidity"></p>
           </div>
         </section>
         
