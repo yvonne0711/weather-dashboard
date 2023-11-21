@@ -50,3 +50,45 @@ searchButton.addEventListener("click", function (event) {
       console.error('There was a problem with the fetch operation:', error);
     });
 });
+
+
+// trigger a new search when a city in the history is clicked
+function recentSearch(city) {
+    // sets the value of the city in the search bar
+    document.getElementById("search-input").value = city;
+    
+    // on click event on the button
+    document.getElementById("search-button").click();
+}
+
+// adding cities into the search history
+function addToSearchHistory(city) {
+    // checks if the city already exists in the history
+    if (document.getElementById("history").children.length > 0) {
+        var cityHistory = Array.from(document.getElementById("history").children);
+        var exists = cityHistory.some(function (element) {
+            return element.textContent.trim() === city;
+        });
+
+        // dont return anything if it already exists
+        if (exists) {
+            return;
+        }
+    }
+
+    // creates a new button for the city if not
+    var cityButton = document.createElement("button");
+    cityButton.className = "btn btn-secondary search-button w-100 mt-3 py-1";
+    cityButton.textContent = city;
+    cityButton.setAttribute('type', 'submit');
+    cityButton.setAttribute('aria-label', 'submit search history');
+
+    // trigger a function when clicked
+    cityButton.addEventListener("click", function () {
+        recentSearch(city);
+    });
+
+    // adds the city into to the search history
+    document.getElementById("history").appendChild(cityButton);
+}
+
