@@ -64,16 +64,16 @@ function recentSearch(city) {
 // adding cities into the search history
 function addToSearchHistory(city) {
     // checks if the city already exists in the history
-    if (document.getElementById("history").children.length > 0) {
-        var cityHistory = Array.from(document.getElementById("history").children);
-        var exists = cityHistory.some(function (element) {
-            return element.textContent.trim() === city;
-        });
+    var historyElement = document.getElementById("history");
 
-        // dont return anything if it already exists
-        if (exists) {
-            return;
-        }
+    // checks if the city is already in the history 
+    var cityHistory = Array.from(historyElement.children).some(function (element) {
+      return element.textContent.trim() === city;
+    });
+
+    // if the city is already in the history, dont return anything
+    if (cityHistory) {
+      return;
     }
 
     // creates a new button for the city if not
